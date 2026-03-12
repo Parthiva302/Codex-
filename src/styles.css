@@ -1,0 +1,205 @@
+:root {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  background: var(--bg);
+}
+
+a,
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+.app {
+  min-height: 100vh;
+  background: radial-gradient(circle at top left, color-mix(in srgb, var(--accent) 40%, transparent), transparent 45%),
+    radial-gradient(circle at bottom right, color-mix(in srgb, var(--accent-alt) 35%, transparent), transparent 48%),
+    var(--bg);
+}
+
+.scene-wrapper {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.6;
+}
+
+.navbar,
+main,
+.footer {
+  position: relative;
+  z-index: 1;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  backdrop-filter: blur(7px);
+  background: color-mix(in srgb, var(--bg-secondary) 72%, transparent);
+}
+
+.logo {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+.logo span {
+  color: var(--accent-alt);
+}
+
+nav {
+  display: flex;
+  gap: 1rem;
+}
+
+nav a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.controls {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.hero,
+.projects,
+.about,
+.contact {
+  width: min(1000px, 92vw);
+  margin: 0 auto;
+  padding: 5rem 0;
+}
+
+.hero h1 {
+  font-size: clamp(2.4rem, 5vw, 4.5rem);
+  margin-bottom: 1rem;
+}
+
+.cta {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.25rem;
+  background: linear-gradient(130deg, var(--accent), var(--accent-alt));
+  color: #fff;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  perspective: 1000px;
+}
+
+.project-card {
+  border-radius: 20px;
+  padding: 1.25rem;
+  background: color-mix(in srgb, var(--bg-secondary) 78%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+  box-shadow: 0 18px 60px color-mix(in srgb, var(--accent) 20%, transparent);
+  cursor: pointer;
+}
+
+.project-card:focus-visible,
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--accent-alt);
+  outline-offset: 2px;
+}
+
+.project-category {
+  color: var(--accent-alt);
+  font-weight: 600;
+}
+
+.project-card ul {
+  display: flex;
+  gap: 0.4rem;
+  padding: 0;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.project-card li {
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--accent) 50%, transparent);
+  font-size: 0.8rem;
+}
+
+.contact form {
+  display: grid;
+  gap: 0.6rem;
+  max-width: 560px;
+}
+
+input,
+textarea,
+select,
+button {
+  padding: 0.65rem;
+  border-radius: 10px;
+  border: 1px solid color-mix(in srgb, var(--accent) 40%, transparent);
+  background: color-mix(in srgb, var(--bg-secondary) 88%, transparent);
+  color: var(--text);
+}
+
+button {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.footer {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgb(4 8 18 / 60%);
+  z-index: 5;
+}
+
+.modal {
+  width: min(560px, 90vw);
+  border-radius: 16px;
+  padding: 1.2rem;
+  background: var(--bg-secondary);
+}
+
+@media (max-width: 800px) {
+  .navbar {
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    justify-content: center;
+  }
+
+  .controls {
+    width: 100%;
+    justify-content: center;
+  }
+}
